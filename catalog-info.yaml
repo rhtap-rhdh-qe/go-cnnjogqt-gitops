@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: go-cnnjogqt-gitops
+  description: This is GitOps manifest for go-cnnjogqt   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=go-cnnjogqt
+    backstage.io/kubernetes-id: go-cnnjogqt 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: go-cnnjogqt
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:go-cnnjogqt
